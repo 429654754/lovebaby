@@ -1,55 +1,28 @@
 <template>
-  <div id="index">
+  <div class="index">
+    <el-container>
+      <el-header>
 
-    <!--侧边背景图-->
-    <section class="back_left"></section>
-    <section class="back_right"></section>
+      </el-header>
+      <el-main>
 
-    <!--导航-->
-    <nav>
-      <a href="javascript:;"></a>
-      <a href="javascript:;"></a>
-      <a href="javascript:;"></a>
-      <a href="javascript:;"></a>
-    </nav>
+      </el-main>
+    </el-container>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Index',
-  data () {
-    return {
-
-    }
-  }
+  name: 'Index'
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  #index {
+  .index{
     width: 100%;
     height: 100vh;
-    background: url("../assets/index-back.jpg") no-repeat;
+    background: url("../assets/index-back1.jpg") no-repeat center;
     background-size: cover;
-    position: relative;
-  }
-
-  .back_left,.back_right{
-    width: 17%;
-    background: url("../assets/index-side1.png") no-repeat;
-    background-size: 100% 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    opacity: 0.7;
-  }
-
-  .back_right{
-    background-image: url("../assets/index-side2.png");
-    left: auto;
-    right: 0;
   }
 </style>

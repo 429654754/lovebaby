@@ -1,6 +1,6 @@
-# love_baby
+# my-project
 
-> love baby forever
+> A Vue.js project
 
 ## Build Setup
 
