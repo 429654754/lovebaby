@@ -45,24 +45,24 @@ export default {
   name: 'Index',
   data () {
     return {
-      days: "",
-      hours: "",
-      minutes: "",
-      seconds: ""
+      days: '',
+      hours: '',
+      minutes: '',
+      seconds: ''
     }
   },
-  methods:{
-    times: function(){
-      var s1 = '2016-06-17';
-      var s2 = new Date();
-      s1 = new Date(s1.replace(/-/g, "/"));
+  methods: {
+    times: function () {
+      var s1 = '2016-06-17'
+      var s2 = new Date()
+      s1 = new Date(s1.replace(/-/g, '/'))
 
-      var _day = s2.getTime() - s1.getTime();
-      this.days = parseInt(_day / (1000 * 60 * 60 * 24));
+      var _day = s2.getTime() - s1.getTime()
+      this.days = parseInt(_day / (1000 * 60 * 60 * 24))
     }
   },
   mounted: function () {
-    times();
+    this.times()
   }
 }
 </script>
