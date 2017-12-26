@@ -16,7 +16,7 @@
           </el-row>
       </el-header>
       <el-main class="mid_cont">
-        <h1>Feng &amp; Qin</h1>
+        <h1 class="animated fadeInDown">Feng &amp; Qin</h1>
         <p class="test">love you forever</p>
         <ul class="time">
           <li>
@@ -36,14 +36,14 @@
             <p>Seconds</p>
           </li>
         </ul>
-        <button class="btn" v-on:click = "btns">come baby</button>
       </el-main>
 
       <!--弹窗-->
       <div class="back" v-show="seen"></div>
       <div class="box" v-show="seen">
-        <input class="zh" type="text" name="账号" placeholder="请输入baby自己的手机号">
-        <input class="mm" type="password" name="密码" placeholder="请输入你家baby的手机号">
+        <p>登入</p>
+        <input class="zh" type="text" name="账号" placeholder="请输入baby自己的手机号" >
+        <input class="mm" type="password" name="密码" placeholder="请输入你家baby的手机号" >
         <input class="yz" type="submit" name="提交" value="验证" v-on:click = 'submits' >
       </div>
     </el-container>
@@ -58,7 +58,7 @@ export default {
       hours: '',
       minutes: '',
       seconds: '',
-      seen: false
+      seen: true
     }
   },
   methods: {
@@ -91,9 +91,6 @@ export default {
         this.days += 1
       }
       setTimeout(this.times, 1000)
-    },
-    btns: function () {
-      this.seen = !this.seen
     },
     submits: function () {
       var zhValue = document.getElementsByClassName('zh')[0].value
@@ -163,14 +160,14 @@ export default {
     font-size: 40px;
     text-align: center;
     padding: 0;
-    padding-top: 60px;
+    padding-top: 9%;
   }
 
   .mid_cont > h1{
     font-family:'NaiYouf31f9c89c1b6af';
-    font-size: 100px;
+    font-size: 120px;
     letter-spacing: -5px;
-    margin-bottom: 30px;
+    margin-bottom: 45px;
     opacity: 0.8;
   }
 
@@ -216,18 +213,24 @@ export default {
 
   .box{
     width: 400px;
-    height: 200px;
+    height: 220px;
     position: fixed;
     left: 50%;
     top: 50%;
     z-index: 2;
-    margin-top: -100px;
+    margin-top: -200px;
     margin-left: -200px;
     background: #ff195a;
     border-radius: 15px;
-    padding: 35px 35px 15px 35px;
+    padding: 15px 35px 15px 35px;
     box-sizing: border-box;
     text-align: center;
+  }
+
+  .box > p{
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fff2ff;
   }
 
   .box > .zh, .box > .mm{
