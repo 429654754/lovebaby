@@ -36,7 +36,16 @@
             <p>Seconds</p>
           </li>
         </ul>
+        <button class="btn" v-on:click = "btns">come baby</button>
       </el-main>
+
+      <!--弹窗-->
+      <div class="back" v-show="seen"></div>
+      <div class="box" v-show="seen">
+        <input class="zh" type="text" name="账号" placeholder="请输入baby自己的手机号">
+        <input class="mm" type="password" name="密码" placeholder="请输入你家baby的手机号">
+        <input class="yz" type="submit" name="提交" value="验证" v-on:click = 'submits' >
+      </div>
     </el-container>
 </template>
 
@@ -48,17 +57,59 @@ export default {
       days: '',
       hours: '',
       minutes: '',
-      seconds: ''
+      seconds: '',
+      seen: false
     }
   },
   methods: {
-    times: function () {
+    times: function () {  //计算时间
       var s1 = '2016-06-17'
       var s2 = new Date()
       s1 = new Date(s1.replace(/-/g, '/'))
 
       var _day = s2.getTime() - s1.getTime()
       this.days = parseInt(_day / (1000 * 60 * 60 * 24))
+      var _hours = parseInt(_day / (1000 * 60 * 60)) - parseInt(this.days * 24)
+      this.hours = parseInt(_hours)
+      var _minutes = parseInt(_day / (1000 * 60)) - parseInt((this.days * 24 * 60) + (this.hours * 60))
+      this.minutes = parseInt(_minutes)
+      var _seconds = parseInt(_day / 1000) - parseInt((this.days * 24 * 60 * 60) + (this.hours * 60 * 60) + (this.minutes * 60))
+      this.seconds = parseInt(_seconds)
+
+      this.timer()
+    },
+    timer: function () {  //计时器
+      this.seconds += 1
+      if (this.seconds >= 60) {
+        this.seconds = 0
+        this.minutes += 1
+      } else if (this.minutes >= 60) {
+        this.minutes = 0
+        this.hours += 1
+      } else if (this.hours >= 24) {
+        this.hours = 0
+        this.days += 1
+      }
+      setTimeout(this.times, 1000)
+    },
+    btns: function () {
+      this.seen = !this.seen
+    },
+    submits: function () {
+      var zhValue = document.getElementsByClassName('zh')[0].value
+      var mmValue = document.getElementsByClassName('mm')[0].value
+      if (zhValue === '13486688007' && mmValue === '13252233675') {
+        alert('北鼻新年快乐 ^_^')
+        this.seen = false
+      } else if (zhValue === '' || mmValue === '') {
+        alert('别偷懒，还没输完呢')
+        return false
+      } else {
+        alert('输错了，笨蛋')
+        document.getElementsByClassName('zh')[0].value = null
+        document.getElementsByClassName('mm')[0].value = null
+        return false
+      }
     }
   },
   mounted: function () {
@@ -81,7 +132,6 @@ export default {
     padding-top: 20px;
     line-height: 60px;
     margin: 0 auto;
-    color: #fff;
     box-sizing: content-box;
   }
 
@@ -89,6 +139,7 @@ export default {
     font-size: 100px;
     font-style: italic;
     letter-spacing: -5px;
+    color: #fff2ff;
   }
 
   .head_nav{
@@ -104,19 +155,15 @@ export default {
   }
 
   .head_nav > a:hover, .head_nav > a.active, .mid_cont{
-    color: #fff;
+    color: #fff2ff;
   }
 
   .mid_cont{
-    display: flex;
     width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 200px;
-    color: #fff;
-    opacity: 0.8;
     font-size: 40px;
+    text-align: center;
+    padding: 0;
+    padding-top: 60px;
   }
 
   .mid_cont > h1{
@@ -124,23 +171,94 @@ export default {
     font-size: 100px;
     letter-spacing: -5px;
     margin-bottom: 30px;
+    opacity: 0.8;
   }
 
   .mid_cont > .test{
     margin-bottom: 70px;
+    opacity: 0.8;
   }
 
   .time{
     display: flex;
     justify-content: center;
+    opacity: 0.8;
   }
 
   .time > li{
     width: 100px;
     height: 100px;
+    padding-top: 30px;
+    box-sizing: border-box;
     border-radius: 60px;
     background: #ff88f5;
     margin-bottom: 50px;
     margin-left: 10px;
+    text-align: center;
+    font-size: 30px;
+    animation: pulse 1s ease infinite;
+  }
+
+  .time > li p:nth-child(2){
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .back{
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    opacity: 0.7;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+
+  .box{
+    width: 400px;
+    height: 200px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    margin-top: -100px;
+    margin-left: -200px;
+    background: #ff195a;
+    border-radius: 15px;
+    padding: 35px 35px 15px 35px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .box > .zh, .box > .mm{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    width: 100%;
+    height: 38px;
+    margin-bottom: 15px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    color: #ff88f5;
+  }
+
+  .yz{
+    width: 40%;
+    height: 36px;
+    background: #ff88f5;
+    color: #fff2ff;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .btn{
+    width: 140px;
+    height: 40px;
+    background: #fff2ff;
+    color: #ff88f5;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
   }
 </style>

@@ -14,9 +14,9 @@ export default {
 
 /*初始化*/
   *{ margin:0; padding:0;}
-  body{ font-size:14px; font-family:"Microsoft Yahei";font-style:normal;}
+  body{ font-size:14px; font-family:"Microsoft Yahei";font-style:normal;min-width: 1200px;}
   a{ text-decoration:none}
-  a,a:hover{  color:#333;transition:background 0.5s linear;-webkit-transition:background 0.5s linear;-moz-transition:background 0.5s linear;-o-transition:background 0.5s linear;}
+  a,a:hover{  color:#fff2ff;transition:background 0.5s linear;-webkit-transition:background 0.5s linear;-moz-transition:background 0.5s linear;-o-transition:background 0.5s linear;}
   em, i{font-style: normal;}
   ul, ol, li{list-style: none;}
   img{ border:none;vertical-align:middle;}
