@@ -16,7 +16,7 @@ export default {
   *{ margin:0; padding:0;}
   body{ font-size:14px; font-family:"Microsoft Yahei";font-style:normal;min-width: 1200px;}
   a{ text-decoration:none}
-  a,a:hover{  color:#fff2ff;transition:background 0.5s linear;-webkit-transition:background 0.5s linear;-moz-transition:background 0.5s linear;-o-transition:background 0.5s linear;}
+  a,a:hover{  color:#fff;transition:background 0.5s linear;-webkit-transition:background 0.5s linear;-moz-transition:background 0.5s linear;-o-transition:background 0.5s linear;}
   em, i{font-style: normal;}
   ul, ol, li{list-style: none;}
   img{ border:none;vertical-align:middle;}
@@ -44,5 +44,10 @@ export default {
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  .ex-item, .ex-cont, .el-carousel__container{
+    height: 100%;
+    box-sizing: border-box;
   }
 </style>
