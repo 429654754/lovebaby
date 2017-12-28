@@ -54,10 +54,6 @@ export default {
     background: -webkit-linear-gradient(left,transparent,#8d8d8d 65%);
   }
 
-  .side-bar > ul li:nth-child(2) a{
-    background: -webkit-linear-gradient(left,transparent,#ff88f5 65%);
-  }
-
   .side-bar > ul a:hover{
     background: -webkit-linear-gradient(left,transparent,#ff88f5 65%);
   }

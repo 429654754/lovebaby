@@ -50,4 +50,9 @@ export default {
     height: 100%;
     box-sizing: border-box;
   }
+
+  .index_box{
+    min-width: 1200px;
+  }
+    
 </style>

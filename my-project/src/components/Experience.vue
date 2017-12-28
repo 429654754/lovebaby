@@ -66,6 +66,9 @@ export default {
   name: 'Experience',
   components: {LeftSide}
 }
+
+$youziku.load('.ex-item > h1', '8e2f5af9f43146dc81ab83fad64dfb66', 'AnJingCheng-Xing')
+$youziku.draw()
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -223,6 +226,10 @@ export default {
   .ex-wl .el-carousel__item:nth-child(3n) {
     background: url("../assets/wl3.jpg") no-repeat center;
     background-size: auto 100%;
+  }
+
+  .side-bar >>> ul li:nth-child(2) a{
+    background: -webkit-linear-gradient(left,transparent,#ff88f5 65%);
   }
 
 </style>
