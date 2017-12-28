@@ -61,7 +61,7 @@ export default {
       minutes: '',
       seconds: '',
       seen: false,
-      titSeen: false
+      titSeen: true
     }
   },
   methods: {

@@ -46,7 +46,7 @@ export default {
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .ex-item, .ex-cont, .el-carousel__container{
+  .ex-cont, .el-carousel__container{
     height: 100%;
     box-sizing: border-box;
   }
