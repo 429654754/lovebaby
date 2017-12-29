@@ -2,6 +2,7 @@
   <el-container class="beautiful">
     <LeftSide></LeftSide>
     <el-main class="ex-cont">
+        <h1 class="cssf46aab01c1b6af">宝宝美照墙</h1>
         <img src="../assets/beaut1.jpg" alt="" class="beaut1" >
         <img src="../assets/beaut2.jpg" alt="" class="beaut2" >
         <img src="../assets/beaut3.jpg" alt="" class="beaut3" >
@@ -14,6 +15,17 @@
         <img src="../assets/beaut10.jpg" alt="" class="beaut10" >
         <img src="../assets/beaut11.jpg" alt="" class="beaut11" >
         <img src="../assets/beaut12.jpg" alt="" class="beaut12" >
+        <img src="../assets/beaut13.jpg" alt="" class="beaut13" >
+        <img src="../assets/beaut14.jpg" alt="" class="beaut14" >
+        <img src="../assets/beaut15.jpg" alt="" class="beaut15" >
+        <div class="zm-sj">
+          <p>千秋无绝色！</p>
+          <p>悦目是佳人！</p>
+        </div>
+        <div class="zm-sj2">
+          <p>倾国倾城貌！</p>
+          <p>惊为天下人！</p>
+        </div>
     </el-main>
   </el-container>
 </template>
@@ -25,7 +37,6 @@ export default {
   name: 'Beautiful',
   components: {LeftSide}
 }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -37,6 +48,146 @@ export default {
 
     .side-bar >>> ul li:nth-child(3) a{
         background: -webkit-linear-gradient(left,transparent,#ff88f5 65%);
+    }
+
+    .ex-cont{
+      padding: 0;
+      position: relative;
+      height: 100vh;
+      overflow: scroll;
+    }
+
+    .ex-cont > h1{
+      color: #ff88f5;
+      text-align: center;
+      font-size: 50px;
+      margin-top: 10px;
+    }
+
+    .ex-cont > img{
+      width: auto;
+      height: 30%;
+      position: absolute;
+      cursor: pointer;
+      border: 3px solid #ccc;
+    }
+
+    .ex-cont > img:hover{
+      border: 3px solid #ff88f5;
+    }
+
+    .beaut1{
+      left: 8%;
+      top: 16%;
+      transform:rotate(7deg);
+    }
+
+    .beaut2{
+      left: 26%;
+      top: 16%;
+      transform:rotate(-10deg);
+    }
+
+    .beaut3{
+      left: 44%;
+      top: 16%;
+      transform:rotate(2deg);
+    }
+
+    .beaut4{
+      left: 62%;
+      top: 16%;
+      transform:rotate(-6deg);
+    }
+
+    .beaut5 {
+      left: 80%;
+      top: 16%;
+      transform: rotate(7deg);
+    }
+
+    .beaut6 {
+      left: 8%;
+      top: 52%;
+      transform: rotate(-5deg);
+    }
+
+    .beaut7 {
+      left: 26%;
+      top: 52%;
+      transform: rotate(2deg);
+    }
+
+    .beaut8 {
+      left: 44%;
+      top: 52%;
+      transform: rotate(8deg);
+    }
+
+    .beaut9 {
+      left: 62%;
+      top: 52%;
+      transform: rotate(-3deg);
+    }
+
+    .beaut10 {
+      left: 80%;
+      top: 52%;
+      transform: rotate(10deg);
+    }
+
+    .beaut11 {
+      left: 8%;
+      top: 88%;
+      transform: rotate(-2deg);
+    }
+
+    .beaut12 {
+      left: 26%;
+      top: 88%;
+      transform: rotate(7deg);
+    }
+
+    .beaut13 {
+      left: 44%;
+      top: 88%;
+      transform: rotate(2deg);
+    }
+
+    .beaut14 {
+      left: 62%;
+      top: 88%;
+      transform: rotate(-10deg);
+    }
+
+    .beaut15 {
+      left: 80%;
+      top: 88%;
+      transform: rotate(5deg);
+    }
+
+    .zm-sj, .zm-sj2{
+      position: absolute;
+      top: 128%;
+      width: 600px;
+      margin-left: 10%;
+      font-size: 30px;
+      color: #ff88f5;
+      font-weight: bold;
+    }
+
+    .zm-sj2{
+      top: 135%;
+    }
+
+    .zm-sj > p, .zm-sj2 > p{
+      float: left;
+      font-style: italic;
+      letter-spacing: 10px;
+    }
+
+    .zm-sj > p:first-child, .zm-sj2 > p:first-child{
+      margin-right: 80px;
     }
 
 </style>
