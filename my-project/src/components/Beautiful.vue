@@ -3,21 +3,21 @@
     <LeftSide></LeftSide>
     <el-main class="ex-cont">
         <h1 class="cssf46aab01c1b6af">宝宝美照墙</h1>
-        <img src="../assets/beaut1.jpg" alt="" class="beaut1" >
-        <img src="../assets/beaut2.jpg" alt="" class="beaut2" >
-        <img src="../assets/beaut3.jpg" alt="" class="beaut3" >
-        <img src="../assets/beaut4.jpg" alt="" class="beaut4" >
-        <img src="../assets/beaut5.jpg" alt="" class="beaut5" >
-        <img src="../assets/beaut6.jpg" alt="" class="beaut6" >
-        <img src="../assets/beaut7.jpg" alt="" class="beaut7" >
-        <img src="../assets/beaut8.jpg" alt="" class="beaut8" >
-        <img src="../assets/beaut9.jpg" alt="" class="beaut9" >
-        <img src="../assets/beaut10.jpg" alt="" class="beaut10" >
-        <img src="../assets/beaut11.jpg" alt="" class="beaut11" >
-        <img src="../assets/beaut12.jpg" alt="" class="beaut12" >
-        <img src="../assets/beaut13.jpg" alt="" class="beaut13" >
-        <img src="../assets/beaut14.jpg" alt="" class="beaut14" >
-        <img src="../assets/beaut15.jpg" alt="" class="beaut15" >
+        <img v-on:click="beautCik($event)" src="../assets/beaut1.jpg" alt="" class="beaut1" >
+        <img v-on:click="beautCik($event)" src="../assets/beaut2.jpg" alt="" class="beaut2" >
+        <img v-on:click="beautCik($event)" src="../assets/beaut3.jpg" alt="" class="beaut3" >
+        <img v-on:click="beautCik($event)" src="../assets/beaut4.jpg" alt="" class="beaut4" >
+        <img v-on:click="beautCik($event)" src="../assets/beaut5.jpg" alt="" class="beaut5" >
+        <img v-on:click="beautCik($event)" src="../assets/beaut6.jpg" alt="" class="beaut6" >
+        <img v-on:click="beautCik($event)" src="../assets/beaut7.jpg" alt="" class="beaut7" >
+        <img v-on:click="beautCik($event)" src="../assets/beaut8.jpg" alt="" class="beaut8" >
+        <img v-on:click="beautCik($event)" src="../assets/beaut9.jpg" alt="" class="beaut9" >
+        <img v-on:click="beautCik($event)" src="../assets/beaut10.jpg" alt="" class="beaut10" >
+        <img v-on:click="beautCik($event)" src="../assets/beaut11.jpg" alt="" class="beaut11" >
+        <img v-on:click="beautCik($event)" src="../assets/beaut12.jpg" alt="" class="beaut12" >
+        <img v-on:click="beautCik($event)" src="../assets/beaut13.jpg" alt="" class="beaut13" >
+        <img v-on:click="beautCik($event)" src="../assets/beaut14.jpg" alt="" class="beaut14" >
+        <img v-on:click="beautCik($event)" src="../assets/beaut15.jpg" alt="" class="beaut15" >
         <div class="zm-sj">
           <p>千秋无绝色！</p>
           <p>悦目是佳人！</p>
@@ -27,7 +27,7 @@
           <p>惊为天下人！</p>
         </div>
     </el-main>
-    <div class="back"></div>
+    <div class="back" v-on:click="backCik"></div>
     <img src="" alt="" class="big-img" >
   </el-container>
 </template>
@@ -37,23 +37,37 @@ import LeftSide from './LeftSide'
 
 export default {
   name: 'Beautiful',
-  components: {LeftSide}
+  components: {LeftSide},
+  methods: {
+    beautCik: function (e) {
+      $(".back").show()
+      $(".big-img").fadeIn(300)
+      var srcValue = e.currentTarget.src
+      $(".big-img").attr("src", srcValue)
+    },
+
+    backCik: function () {
+      $(".big-img").fadeOut(300,function () {
+        $(".back").hide()
+      })
+    }
+  }
 }
 
-$(function(){
-  $(".beautiful > .ex-cont").find("img").on("click",function(){
-    $(".back").show();
-    $(".big-img").fadeIn(300);
-    var srcValue = $(this).attr("src");
-    $(".big-img").attr("src", srcValue);
-  })
+// $(function () {
+//   $(".beautiful > .ex-cont").find("img").on("click",function () {
+//     $(".back").show()
+//     $(".big-img").fadeIn(300)
+//     var srcValue = $(this).attr("src")
+//     $(".big-img").attr("src", srcValue)
+//   })
 
-  $(".back").on("click",function(){
-    $(".big-img").fadeOut(300,function(){
-      $(".back").hide();
-    });
-  })
-})
+//   $(".back").on("click",function () {
+//     $(".big-img").fadeOut(300,function () {
+//       $(".back").hide()
+//     })
+//   })
+// })
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

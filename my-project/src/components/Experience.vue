@@ -3,7 +3,7 @@
     <LeftSide></LeftSide>
     <el-main class="ex-cont">
       <div class="ex-item ex-nt">
-        <h1>南塘老街</h1>
+        <h1 class="cssf4d16294d1b6af">南塘老街</h1>
         <p class="title">November 7th 2016</p>
         <el-carousel :interval="100000" type="card">
           <el-carousel-item v-for="item in 3" :key="item"></el-carousel-item>
@@ -12,7 +12,7 @@
       </div>
 
       <div class="ex-item ex-xh">
-        <h1>西湖夜游</h1>
+        <h1 class="cssf4d1715f01b6af">西湖夜游</h1>
         <p class="title">November 12th 2016</p>
         <el-carousel :interval="100000" type="card">
           <el-carousel-item v-for="item in 3" :key="item"></el-carousel-item>
@@ -21,7 +21,7 @@
       </div>
 
       <div class="ex-item ex-yz">
-        <h1>鄞州公园</h1>
+        <h1 class="cssf4d17cb551b6af">鄞州公园</h1>
         <p class="title">December 3rd 2016</p>
         <el-carousel :interval="100000" type="card">
           <el-carousel-item v-for="item in 3" :key="item"></el-carousel-item>
@@ -30,7 +30,7 @@
       </div>
 
       <div class="ex-item ex-xt">
-        <h1>西塘古镇</h1>
+        <h1 class="cssf4d1875701b6af">西塘古镇</h1>
         <p class="title">June 3rd 2017</p>
         <el-carousel :interval="100000" type="card">
           <el-carousel-item v-for="item in 6" :key="item"></el-carousel-item>
@@ -39,7 +39,7 @@
       </div>
 
       <div class="ex-item ex-ac">
-        <h1>安昌古镇</h1>
+        <h1 class="cssf4d19273c1b6af">安昌古镇</h1>
         <p class="title">June 3rd 2017</p>
         <el-carousel :interval="100000" type="card">
           <el-carousel-item v-for="item in 3" :key="item"></el-carousel-item>
@@ -48,7 +48,7 @@
       </div>
 
       <div class="ex-item ex-wl">
-        <h1>吃喝玩乐</h1>
+        <h1 class="cssf4d19bd131b6af">吃喝玩乐</h1>
         <p class="title">Fall in Love</p>
         <el-carousel :interval="100000" type="card">
           <el-carousel-item v-for="item in 3" :key="item"></el-carousel-item>
@@ -66,9 +66,6 @@ export default {
   name: 'Experience',
   components: {LeftSide}
 }
-
-$youziku.load('.ex-item > h1', '8e2f5af9f43146dc81ab83fad64dfb66', 'AnJingCheng-Xing')
-$youziku.draw()
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

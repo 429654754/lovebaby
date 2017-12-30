@@ -17,7 +17,7 @@
         </el-row>
       </el-header>
       <el-main class="mid_cont">
-        <h1 class="animated fadeInDown title" v-show="titSeen">Feng &amp; Qin</h1>
+        <h1 class="animated fadeInDown title">Feng &amp; Qin</h1>
         <p class="test">love you forever</p>
         <ul class="time">
           <li>
@@ -39,15 +39,6 @@
         </ul>
       </el-main>
     </el-container>
-     <!--弹窗-->
-    <div class="back_index"></div>
-    <div class="back" v-show="seen"></div>
-    <div class="box" v-show="seen">
-      <p>登入</p>
-      <input class="zh" type="text" name="账号" placeholder="请输入baby自己的手机号">
-      <input class="mm" type="password" name="密码" placeholder="请输入你家baby的手机号">
-      <input class="yz" type="submit" name="提交" value="验证" v-on:click='submits'>
-    </div>
   </div>
 </template>
 
@@ -60,8 +51,6 @@ export default {
       hours: '',
       minutes: '',
       seconds: '',
-      seen: false,
-      titSeen: true
     }
   },
   methods: {
@@ -95,23 +84,6 @@ export default {
       }
       setTimeout(this.times, 1000)
     },
-    submits: function () {
-      var zhValue = document.getElementsByClassName('zh')[0].value
-      var mmValue = document.getElementsByClassName('mm')[0].value
-      if (zhValue === '13486688007' && mmValue === '13252233675') {
-        alert('北鼻新年快乐 ^_^')
-        this.seen = false
-        this.titSeen = true
-      } else if (zhValue === '' || mmValue === '') {
-        alert('别偷懒，还没输完呢')
-        return false
-      } else {
-        alert('输错了，笨蛋')
-        document.getElementsByClassName('zh')[0].value = null
-        document.getElementsByClassName('mm')[0].value = null
-        return false
-      }
-    }
   },
   mounted: function () {
     this.times()
@@ -160,8 +132,9 @@ export default {
     color: #dbdbdd;
     position: relative;
     top: 9px;
-    font-size: 15px;
+    font-size: 16px;
     margin-left: 30px;
+    font-weight: bold;
   }
 
   .head_nav > a:hover, .head_nav > a.active, .mid_cont{
