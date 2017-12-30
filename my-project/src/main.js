@@ -7,6 +7,7 @@ import '../theme/index.css'
 import '../static/animate.css'
 import App from './App'
 import router from './router'
+import $ from 'jquery'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)

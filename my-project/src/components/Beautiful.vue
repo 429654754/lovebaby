@@ -27,6 +27,8 @@
           <p>惊为天下人！</p>
         </div>
     </el-main>
+    <div class="back"></div>
+    <img src="" alt="" class="big-img" >
   </el-container>
 </template>
 
@@ -37,6 +39,21 @@ export default {
   name: 'Beautiful',
   components: {LeftSide}
 }
+
+$(function(){
+  $(".beautiful > .ex-cont").find("img").on("click",function(){
+    $(".back").show();
+    $(".big-img").fadeIn(300);
+    var srcValue = $(this).attr("src");
+    $(".big-img").attr("src", srcValue);
+  })
+
+  $(".back").on("click",function(){
+    $(".big-img").fadeOut(300,function(){
+      $(".back").hide();
+    });
+  })
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -169,7 +186,7 @@ export default {
     .zm-sj, .zm-sj2{
       position: absolute;
       top: 128%;
-      width: 600px;
+      width: 810px;
       margin-left: 10%;
       font-size: 30px;
       color: #ff88f5;
@@ -177,17 +194,40 @@ export default {
     }
 
     .zm-sj2{
-      top: 135%;
+      top: 137%;
     }
 
     .zm-sj > p, .zm-sj2 > p{
       float: left;
       font-style: italic;
-      letter-spacing: 10px;
+      letter-spacing: 25px;
     }
 
     .zm-sj > p:first-child, .zm-sj2 > p:first-child{
       margin-right: 80px;
     }
 
+    .back{
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 10;
+      background: #000;
+      opacity: 0.85;
+      display: none;
+    }
+
+    .big-img{
+      width: auto;
+      height: 500px;
+      position: fixed;
+      right: 32%;
+      top: 40px;
+      margin-left: -150px;
+      z-index: 15;
+      border: 3px solid #ccc;
+      display: none;
+    }
 </style>
